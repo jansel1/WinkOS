@@ -15,7 +15,7 @@ void cls(int delay=0) {
 }
 
 void renderOptions() {
-    cout << "N - Notepad \t C - Calculator \t" << endl << endl;
+    cout << "N - Notepad \t C - Calculator \t S - JSC Command Line (Alpha)" << endl << endl;
 }
 
 float calc(int a, int b, char op) {
@@ -94,9 +94,13 @@ int renderMain() {
 
             calc(firstNumber, secondNumber, op);
         }
-    } else if (out == "a") {
+    } else if (out == "s") {
         cls();
+        
+        system("cd external\\jsc-alpha");
+        system("external\\jsc-alpha\\jsc.exe");
     }
+
     cls();
         
     renderOptions();
